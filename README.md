@@ -34,7 +34,13 @@
 # next와 eslint 설치하기
 
 ```
-npm i react react-dom next
+npm i react react-dom
+npm i -g next
 npm i -D nodemon webpack
 ```
 
+## eslint plugin
+
+```
+npm i -D eslint-plugin-import eslint-plugin-react eslint-react-hooks
+```
