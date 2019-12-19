@@ -44,3 +44,11 @@ npm i -D nodemon webpack
 ```
 npm i -D eslint-plugin-import eslint-plugin-react eslint-react-hooks
 ```
+
+# Ant design for React
+
+https://ant.design/docs/react/introduce
+
+```
+npm i antd
+```
