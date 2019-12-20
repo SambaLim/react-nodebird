@@ -2058,39 +2058,80 @@ const Signup = () => {
     0: term,
     1: setTerm
   } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false);
+  const {
+    0: passwordError,
+    1: setPasswordError
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false);
+  const {
+    0: termError,
+    1: setTermError
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false);
 
-  const onSubmit = () => {};
+  const useInput = (initValue = null) => {
+    const {
+      0: value,
+      1: setter
+    } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(initValue);
 
-  const onChangeId = () => {
+    const handler = e => {
+      setter(e.target.value);
+    };
+
+    return [value, handler];
+  };
+
+  const onSubmit = e => {
+    e.preventDefault();
+
+    if (password !== passwordCheck) {
+      return setPasswordError(true);
+    }
+
+    if (!term) {
+      return setTermError(true);
+    }
+
+    console.log({
+      id,
+      nick,
+      password,
+      passwordCheck,
+      term
+    });
+  };
+
+  const onChangeId = e => {
     setId(e.target.value);
   };
 
-  const onChangeNick = () => {
+  const onChangeNick = e => {
     setNick(e.target.value);
   };
 
-  const onChangePassword = () => {
+  const onChangePassword = e => {
     setPassword(e.target.value);
   };
 
-  const onChangePasswordCheck = () => {
+  const onChangePasswordCheck = e => {
+    setPasswordError(e.target.value !== password);
     setPasswordCheck(e.target.value);
   };
 
-  const onChangeTerm = () => {
-    setTerm(e.target.value);
+  const onChangeTerm = e => {
+    setTermError(false);
+    setTerm(e.target.checked);
   };
 
   return __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx(next_head__WEBPACK_IMPORTED_MODULE_1___default.a, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 34
+      lineNumber: 59
     },
     __self: undefined
   }, __jsx("title", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 35
+      lineNumber: 60
     },
     __self: undefined
   }, "NodeBird"), __jsx("link", {
@@ -2100,13 +2141,13 @@ const Signup = () => {
     crossorigin: "anonymous",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 36
+      lineNumber: 61
     },
     __self: undefined
   })), __jsx(_components_AppLayout__WEBPACK_IMPORTED_MODULE_2__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 38
+      lineNumber: 63
     },
     __self: undefined
   }, __jsx(antd__WEBPACK_IMPORTED_MODULE_3__["Form"], {
@@ -2116,26 +2157,26 @@ const Signup = () => {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 39
+      lineNumber: 64
     },
     __self: undefined
   }, __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 40
+      lineNumber: 65
     },
     __self: undefined
   }, __jsx("label", {
     htmlFor: "user-id",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 41
+      lineNumber: 66
     },
     __self: undefined
   }, "\uC544\uC774\uB514"), __jsx("br", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 42
+      lineNumber: 67
     },
     __self: undefined
   }), __jsx(antd__WEBPACK_IMPORTED_MODULE_3__["Input"], {
@@ -2145,26 +2186,26 @@ const Signup = () => {
     onChange: onChangeId,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 43
+      lineNumber: 68
     },
     __self: undefined
   })), __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 45
+      lineNumber: 70
     },
     __self: undefined
   }, __jsx("label", {
     htmlFor: "user-nick",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 46
+      lineNumber: 71
     },
     __self: undefined
   }, "\uB2C9\uB124\uC784"), __jsx("br", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 47
+      lineNumber: 72
     },
     __self: undefined
   }), __jsx(antd__WEBPACK_IMPORTED_MODULE_3__["Input"], {
@@ -2174,26 +2215,26 @@ const Signup = () => {
     onChange: onChangeNick,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 48
+      lineNumber: 73
     },
     __self: undefined
   })), __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 50
+      lineNumber: 75
     },
     __self: undefined
   }, __jsx("label", {
     htmlFor: "user-password",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 51
+      lineNumber: 76
     },
     __self: undefined
   }, "\uBE44\uBC00\uBC88\uD638"), __jsx("br", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 52
+      lineNumber: 77
     },
     __self: undefined
   }), __jsx(antd__WEBPACK_IMPORTED_MODULE_3__["Input"], {
@@ -2204,26 +2245,26 @@ const Signup = () => {
     onChange: onChangePassword,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 53
+      lineNumber: 78
     },
     __self: undefined
   })), __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 55
+      lineNumber: 80
     },
     __self: undefined
   }, __jsx("label", {
     htmlFor: "user-password-check",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 56
+      lineNumber: 81
     },
     __self: undefined
   }, "\uBE44\uBC00\uBC88\uD638"), __jsx("br", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 57
+      lineNumber: 82
     },
     __self: undefined
   }), __jsx(antd__WEBPACK_IMPORTED_MODULE_3__["Input"], {
@@ -2234,28 +2275,49 @@ const Signup = () => {
     onChange: onChangePasswordCheck,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 58
+      lineNumber: 83
     },
     __self: undefined
-  })), __jsx("div", {
+  }), passwordError && __jsx("div", {
+    style: {
+      color: 'red'
+    },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 60
+      lineNumber: 84
+    },
+    __self: undefined
+  }, "\uBE44\uBC00\uBC88\uD638\uAC00 \uC77C\uCE58\uD558\uC9C0 \uC54A\uC2B5\uB2C8\uB2E4.")), __jsx("div", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 86
     },
     __self: undefined
   }, __jsx(antd__WEBPACK_IMPORTED_MODULE_3__["Checkbox"], {
     name: "user-term",
-    value: term,
+    checked: term,
     onChange: onChangeTerm,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 61
+      lineNumber: 87
     },
     __self: undefined
-  }, "\uC0BC\uBC14\uC758 \uB9D0\uC744 \uC798 \uB4E4\uC744 \uAC83\uC744 \uB3D9\uC758\uD569\uB2C8\uB2E4.")), __jsx("div", {
+  }, "\uC0BC\uBC14\uC758 \uB9D0\uC744 \uC798 \uB4E4\uC744 \uAC83\uC744 \uB3D9\uC758\uD569\uB2C8\uB2E4."), termError && __jsx("div", {
+    style: {
+      color: 'red'
+    },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 63
+      lineNumber: 88
+    },
+    __self: undefined
+  }, "\uC57D\uAD00\uC5D0 \uB3D9\uC758\uD558\uC154\uC57C \uD569\uB2C8\uB2E4.")), __jsx("div", {
+    style: {
+      marginTop: 10
+    },
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 90
     },
     __self: undefined
   }, __jsx(antd__WEBPACK_IMPORTED_MODULE_3__["Button"], {
@@ -2263,7 +2325,7 @@ const Signup = () => {
     htmlType: "submit",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 64
+      lineNumber: 91
     },
     __self: undefined
   }, "\uAC00\uC785\uD558\uAE30")))));
