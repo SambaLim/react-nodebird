@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ 	return __webpack_require__(__webpack_require__.s = 6);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -97,11 +97,12 @@ module.exports =
 /*!*************************!*\
   !*** ./pages/signup.js ***!
   \*************************/
-/*! exports provided: default */
+/*! exports provided: useInput, default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "useInput", function() { return useInput; });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "prop-types");
@@ -129,19 +130,18 @@ const TextInput = ({
 TextInput.propTypes = {
   value: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string
 };
+const useInput = (initValue = null) => {
+  const {
+    0: value,
+    1: setter
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(initValue);
+  const handler = Object(react__WEBPACK_IMPORTED_MODULE_0__["useCallback"])(e => {
+    setter(e.target.value);
+  }, []);
+  return [value, handler];
+};
 
 const Signup = () => {
-  const useInput = (initValue = null) => {
-    const {
-      0: value,
-      1: setter
-    } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(initValue);
-    const handler = Object(react__WEBPACK_IMPORTED_MODULE_0__["useCallback"])(e => {
-      setter(e.target.value);
-    }, []);
-    return [value, handler];
-  };
-
   const [id, onChangeId] = useInput('');
   const [nick, onChangeNick] = useInput('');
   const [password, onChangePassword] = useInput('');
@@ -380,7 +380,7 @@ const Signup = () => {
 
 /***/ }),
 
-/***/ 4:
+/***/ 6:
 /*!*******************************!*\
   !*** multi ./pages/signup.js ***!
   \*******************************/
