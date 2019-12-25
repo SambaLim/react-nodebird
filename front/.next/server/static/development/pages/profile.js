@@ -118,32 +118,7 @@ const Profile = () => {
       lineNumber: 6
     },
     __self: undefined
-  }, __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Form"], {
-    style: {
-      marginBottom: '20px',
-      border: '1px solid #d9d9d9',
-      padding: '20px'
-    },
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 7
-    },
-    __self: undefined
-  }, __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Input"], {
-    addonBefore: "\uB2C9\uB124\uC784",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 8
-    },
-    __self: undefined
-  }), __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Button"], {
-    type: "primary",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 9
-    },
-    __self: undefined
-  }, "\uC218\uC815")), __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["List"], {
+  }, __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["List"], {
     style: {
       marginBottom: '20px'
     },
@@ -152,10 +127,11 @@ const Profile = () => {
       xs: 2,
       md: 3
     },
+    size: "small",
     header: __jsx("div", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 14
+        lineNumber: 11
       },
       __self: undefined
     }, "\uD314\uB85C\uC789 \uBAA9\uB85D"),
@@ -165,48 +141,47 @@ const Profile = () => {
       },
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 15
+        lineNumber: 12
       },
       __self: undefined
-    }, "\uB354\uBCF4\uAE30"),
+    }, "\uB354 \uBCF4\uAE30"),
     bordered: true,
-    dataSource: ['삼바림', '킹', '임성호오피셜'],
-    renderItem: item => {
-      __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["List"].Item, {
-        style: {
-          marginTop: '20px'
-        },
+    dataSource: ['삼바림', '킹', '오피셜'],
+    renderItem: item => __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["List"].Item, {
+      style: {
+        marginTop: '20px'
+      },
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 16
+      },
+      __self: undefined
+    }, __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Card"], {
+      actions: [__jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Icon"], {
+        key: "stop",
+        type: "stop",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 19
+          lineNumber: 17
         },
         __self: undefined
-      }, __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Card"], {
-        actions: [__jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Icon"], {
-          type: "stop",
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 20
-          },
-          __self: undefined
-        })],
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 20
-        },
-        __self: undefined
-      }, __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Card"].Meta, {
-        description: item,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 20
-        },
-        __self: undefined
-      })));
-    },
+      })],
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 17
+      },
+      __self: undefined
+    }, __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Card"].Meta, {
+      description: item,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 17
+      },
+      __self: undefined
+    }))),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 11
+      lineNumber: 7
     },
     __self: undefined
   }), __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["List"], {
@@ -218,10 +193,11 @@ const Profile = () => {
       xs: 2,
       md: 3
     },
+    size: "small",
     header: __jsx("div", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 27
+        lineNumber: 25
       },
       __self: undefined
     }, "\uD314\uB85C\uC6CC \uBAA9\uB85D"),
@@ -231,48 +207,47 @@ const Profile = () => {
       },
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 28
+        lineNumber: 26
       },
       __self: undefined
-    }, "\uB354\uBCF4\uAE30"),
+    }, "\uB354 \uBCF4\uAE30"),
     bordered: true,
-    dataSource: ['삼바림', '킹', '임성호오피셜'],
-    renderItem: item => {
-      __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["List"].Item, {
-        style: {
-          marginTop: '20px'
-        },
+    dataSource: ['삼바림', '킹', '오피셜'],
+    renderItem: item => __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["List"].Item, {
+      style: {
+        marginTop: '20px'
+      },
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 30
+      },
+      __self: undefined
+    }, __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Card"], {
+      actions: [__jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Icon"], {
+        key: "stop",
+        type: "stop",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 32
+          lineNumber: 31
         },
         __self: undefined
-      }, __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Card"], {
-        actions: [__jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Icon"], {
-          type: "stop",
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 33
-          },
-          __self: undefined
-        })],
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 33
-        },
-        __self: undefined
-      }, __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Card"].Meta, {
-        description: item,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 33
-        },
-        __self: undefined
-      })));
-    },
+      })],
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 31
+      },
+      __self: undefined
+    }, __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Card"].Meta, {
+      description: item,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 31
+      },
+      __self: undefined
+    }))),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 24
+      lineNumber: 21
     },
     __self: undefined
   }));
