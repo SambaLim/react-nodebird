@@ -73,3 +73,55 @@ _~.js를 생성할 경우, 생성한 _~.js 파일로 덮여쓰임
 2. _app.js: root
 3. pages: 실제 컴포넌트
 3. _error.js: 에러
+
+# Redux
+
+흩뿌려져 있는 `state` 들을 관리하는 방법
+
+1. **redux**
+2. mobx
+3. GraphQL Client
+
+```
+{
+    isLoggedIn: false, // 로그인 여부 → A, C
+    user: {}, // 로그인한 사용자 → B, C
+    mainPosts: [], // 메인 게시글들 → C
+    ...
+}
+```
+
+하나의 `state` 를 여러 컴포넌트에 전달해줄 수 있음
+
+react로 구성된 전체의 `state` 들을 하나의 중앙 통제실에 모은다음에 필요한 컴포넌트에 제공하는것이 **Redux**
+
+Redux의 state만 사용해도 되지만 React의 state도 사용함
+
+## Redux 사용이유
+
+---
+
+- 안정성
+- `state` 통제 용이
+
+## Action
+
+---
+
+`state` 를 바꾸는 행동
+
+`Dispatch` → Action을 실행
+
+Redux는 직접수정할 수 없고 Action을 통해서만 수정할 수 있음
+
+## Reducer
+
+---
+
+`action` 의 결과로 `state` 를 어떻게 바꿀지 정의
+
+## Store
+
+---
+
+`state` , `action` , `reducer` 가 합쳐진 개념
