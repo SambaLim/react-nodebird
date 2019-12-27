@@ -131,3 +131,9 @@ Redux는 직접수정할 수 없고 Action을 통해서만 수정할 수 있음
 ```
 npm i redux react-redux
 ```
+
+Next.js 에서 사용하려면
+
+```
+npm i next-redux-wrapper
+```
