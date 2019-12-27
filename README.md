@@ -125,3 +125,9 @@ Redux는 직접수정할 수 없고 Action을 통해서만 수정할 수 있음
 ---
 
 `state` , `action` , `reducer` 가 합쳐진 개념
+
+# Redux 설치
+
+```
+npm i redux react-redux
+```
