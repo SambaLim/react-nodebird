@@ -137,3 +137,7 @@ Next.js 에서 사용하려면
 ```
 npm i next-redux-wrapper
 ```
+
+# Redux Devtools
+
+https://medium.com/signal9/redux-%EA%B0%9C%EB%B0%9C%EC%9D%84-%EB%8D%94-%ED%8E%B8%ED%95%98%EA%B2%8C-redux-devtools-4e228655ac7d
