@@ -267,24 +267,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! antd */ "antd");
 /* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(antd__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-redux */ "react-redux");
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_redux__WEBPACK_IMPORTED_MODULE_2__);
 var _jsxFileName = "C:\\playground\\reactNodebird\\nodebird\\front\\components\\PostForm.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
-const dummy = {
-  isLoggedIn: true,
-  imagePaths: [],
-  mainPosts: [{
-    User: {
-      id: 1,
-      nickname: '삼바림'
-    },
-    content: '첫 번째 게시물',
-    img: 'https://i.imgur.com/DxH71p6.png'
-  }]
-};
+
 
 const PostForm = () => {
+  const {
+    imagePaths
+  } = Object(react_redux__WEBPACK_IMPORTED_MODULE_2__["useSelector"])(state => state.user);
   return __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Form"], {
     encType: "multipart/form-data",
     style: {
@@ -292,7 +286,7 @@ const PostForm = () => {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 19
+      lineNumber: 10
     },
     __self: undefined
   }, __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Input"].TextArea, {
@@ -300,19 +294,19 @@ const PostForm = () => {
     placeholder: "\uC5B4\uB5A4 \uC2E0\uAE30\uD55C \uC77C\uC774 \uC788\uC5C8\uB098\uC694?",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 20
+      lineNumber: 11
     },
     __self: undefined
   }), __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 21
+      lineNumber: 12
     },
     __self: undefined
   }, __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Button"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 22
+      lineNumber: 13
     },
     __self: undefined
   }, "\uC774\uBBF8\uC9C0 \uC5C5\uB85C\uB4DC"), __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Button"], {
@@ -323,16 +317,16 @@ const PostForm = () => {
     htmlType: "submit",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 23
+      lineNumber: 14
     },
     __self: undefined
   }, "\uC9F9\uC9F9")), __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 25
+      lineNumber: 16
     },
     __self: undefined
-  }, dummy.imagePaths.map((v, i) => {
+  }, imagePaths.map((v, i) => {
     return __jsx("div", {
       key: v,
       style: {
@@ -340,7 +334,7 @@ const PostForm = () => {
       },
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 28
+        lineNumber: 19
       },
       __self: undefined
     }, __jsx("img", {
@@ -351,19 +345,19 @@ const PostForm = () => {
       alt: v,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 29
+        lineNumber: 20
       },
       __self: undefined
     }), __jsx("div", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 30
+        lineNumber: 21
       },
       __self: undefined
     }, __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Button"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 31
+        lineNumber: 22
       },
       __self: undefined
     }, "\uC81C\uAC70")));
@@ -495,66 +489,56 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
-const dummy = {
-  isLoggedIn: true,
-  imagePaths: [],
-  mainPosts: [{
-    User: {
-      id: 1,
-      nickname: '삼바림'
-    },
-    content: '첫 번째 게시물',
-    img: 'https://i.imgur.com/DxH71p6.png'
-  }]
-};
 
 const Home = () => {
   const dispatch = Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["useDispatch"])();
   const {
-    isLoggedIn,
-    user
+    user,
+    isLoggedIn
   } = Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["useSelector"])(state => state.user);
-  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
-    dispatch(_reducers_user__WEBPACK_IMPORTED_MODULE_5__["loginAction"]);
-    dispatch(_reducers_user__WEBPACK_IMPORTED_MODULE_5__["logoutAction"]);
+  const {
+    mainPosts
+  } = Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["useSelector"])(state => state.post);
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {//dispatch(loginAction)
+    //dispatch(logoutAction)
   }, []);
   return __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 32
+      lineNumber: 20
     },
     __self: undefined
   }, user ? __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 33
+      lineNumber: 21
     },
     __self: undefined
   }, "\uB85C\uADF8\uC778 \uD588\uC2B5\uB2C8\uB2E4: ", user.nickname) : __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 33
+      lineNumber: 21
     },
     __self: undefined
   }, "\uB85C\uADF8\uC544\uC6C3 \uD588\uC2B5\uB2C8\uB2E4."), __jsx(_components_NicknameEditForm__WEBPACK_IMPORTED_MODULE_4__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 34
+      lineNumber: 22
     },
     __self: undefined
-  }), dummy.isLoggedIn && __jsx(_components_PostForm__WEBPACK_IMPORTED_MODULE_2__["default"], {
+  }), isLoggedIn && __jsx(_components_PostForm__WEBPACK_IMPORTED_MODULE_2__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 35
+      lineNumber: 23
     },
     __self: undefined
-  }), dummy.mainPosts.map(c => {
+  }), mainPosts.map(c => {
     return __jsx(_components_PostCard__WEBPACK_IMPORTED_MODULE_3__["default"], {
       key: c,
       post: c,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 38
+        lineNumber: 26
       },
       __self: undefined
     });
@@ -604,9 +588,17 @@ function ownKeys(object, enumerableOnly) { var keys = _babel_runtime_corejs2_cor
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(target, key, source[key]); }); } else if (_babel_runtime_corejs2_core_js_object_get_own_property_descriptors__WEBPACK_IMPORTED_MODULE_2___default.a) { _babel_runtime_corejs2_core_js_object_define_properties__WEBPACK_IMPORTED_MODULE_1___default()(target, _babel_runtime_corejs2_core_js_object_get_own_property_descriptors__WEBPACK_IMPORTED_MODULE_2___default()(source)); } else { ownKeys(Object(source)).forEach(function (key) { _babel_runtime_corejs2_core_js_object_define_property__WEBPACK_IMPORTED_MODULE_0___default()(target, key, _babel_runtime_corejs2_core_js_object_get_own_property_descriptor__WEBPACK_IMPORTED_MODULE_3___default()(source, key)); }); } } return target; }
 
+const dummyUser = {
+  nickname: '삼바림',
+  Post: [],
+  Followings: [],
+  Followers: [],
+  isLoggedIn: false
+};
 const initialState = {
   isLoggedIn: false,
-  user: {}
+  user: null,
+  imagePaths: []
 };
 const LOG_IN = 'LOG_IN'; // 액션의 이름
 
@@ -627,7 +619,7 @@ const reducer = (state = initialState, action) => {
       {
         return _objectSpread({}, state, {
           isLoggedIn: true,
-          user: action.data
+          user: dummyUser
         });
       }
 

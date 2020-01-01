@@ -1,5 +1,12 @@
 export const initialState = {
-    mainPosts: [],
+    mainPosts: [
+        { User: {
+            id: 1,
+            nickname: '삼바림'
+        },
+        content: '첫 번째 게시물',
+        img: 'https://i.imgur.com/DxH71p6.png'
+    }],
 }
 
 export const ADD_POST = 'ADD_POST'
