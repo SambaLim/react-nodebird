@@ -99,14 +99,10 @@ Redux의 state만 사용해도 되지만 React의 state도 사용함
 
 ## Redux 사용이유
 
----
-
 - 안정성
 - `state` 통제 용이
 
 ## Action
-
----
 
 `state` 를 바꾸는 행동
 
@@ -116,13 +112,9 @@ Redux는 직접수정할 수 없고 Action을 통해서만 수정할 수 있음
 
 ## Reducer
 
----
-
 `action` 의 결과로 `state` 를 어떻게 바꿀지 정의
 
 ## Store
-
----
 
 `state` , `action` , `reducer` 가 합쳐진 개념
 
@@ -145,3 +137,7 @@ https://medium.com/signal9/redux-%EA%B0%9C%EB%B0%9C%EC%9D%84-%EB%8D%94-%ED%8E%B8
 # React-redux connect
 
 기존에는 hoc 방식으로 사용
+
+# Redux-Saga
+
+리덕스의 문제점은 모든 동작이 동기로 일어남
