@@ -140,4 +140,25 @@ https://medium.com/signal9/redux-%EA%B0%9C%EB%B0%9C%EC%9D%84-%EB%8D%94-%ED%8E%B8
 
 # Redux-Saga
 
-리덕스의 문제점은 모든 동작이 동기로 일어남
+리덕스에서 모든동작은 동기로 일어남 따라서 리덕스 기능의 확장이 필요! → 미들웨어 사용
+
+비동기 요청을 보낼 수 있게함 (ex. Redux-Thunk, Redux-Saga, Redux-Obsevable)
+
+- Redux-Thunk: 쉬운대신 기능이 너무 약함
+
+"현재는 `SIGN_UP` 이 성공한 뒤, 10초뒤에 `SIGN_UP_SUCCESS` 를 하겠다."를 할 방법이 없음
+
+```
+> npm i redux-saga
+```
+
+제너레이터: 무한의 개념과 비동기를 처리
+
+```
+function* generator() {
+
+}
+```
+
+- `call`: 동기호출
+- `fork`: 비동기호출
