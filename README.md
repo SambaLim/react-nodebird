@@ -162,3 +162,19 @@ function* generator() {
 
 - `call`: 동기호출
 - `fork`: 비동기호출
+
+# ES2015 제너레이터
+
+함수를 중단에 멈췄다가 다시시작할 수 있음
+
+```
+function* generator() {
+    console.log(1)
+    console.log(2)
+    yield 3
+    console.log(3)
+}
+
+const gen = generator()
+gen.next()
+```
