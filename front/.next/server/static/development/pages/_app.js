@@ -3060,6 +3060,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _reducers_user__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../reducers/user */ "./reducers/user.js");
 
 
+const HELLO_SAGA = 'HELLO_SAGA';
 
 function loginAPI() {// 서버에 요청
 }
@@ -3068,6 +3069,7 @@ function* login() {
   try {
     yield Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_0__["call"])(loginAPI);
     yield Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_0__["put"])({
+      // dispatch와 같은역할
       type: _reducers_user__WEBPACK_IMPORTED_MODULE_1__["LOG_IN_SUCCESS"]
     });
   } catch (e) {
@@ -3081,8 +3083,22 @@ function* watchLogin() {
   yield Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_0__["takeLatest"])(_reducers_user__WEBPACK_IMPORTED_MODULE_1__["LOG_IN"], login);
 }
 
+function* helloSaga() {
+  console.log('before saga');
+  /* 반복하고 싶다면
+  while(true) {
+      yield take(HELLO_SAGA)
+      console.log('hello saga')
+  }
+  */
+
+  yield Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_0__["take"])(HELLO_SAGA); // HELLO_SAGA를 기다림
+
+  console.log('hello saga');
+}
+
 function* userSaga() {
-  yield Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_0__["all"])([Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_0__["fork"])(watchLogin)]);
+  yield Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_0__["all"])([Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_0__["fork"])(watchLogin), helloSaga()]);
 }
 
 /***/ }),
