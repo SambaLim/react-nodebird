@@ -20,25 +20,21 @@ function* login() {
     }
 }
 
-function* watchLogin() {
-    yield takeLatest(LOG_IN, login)
+function* watchSignUp() {
+
 }
 
-function* helloSaga() {
-    console.log('before saga')
-    /* 반복하고 싶다면
-    while(true) {
-        yield take(HELLO_SAGA)
-        console.log('hello saga')
-    }
-    */
-    yield take(HELLO_SAGA) // HELLO_SAGA를 기다림
-    console.log('hello saga')
+function* watchLogin() {
+    yield take(LOG_IN)
+    yield delay(2000)
+    yield put({
+        type: LOG_IN_SUCCESS,
+    })
 }
 
 export default function* userSaga() {
     yield all([
-        fork(watchLogin),
-        helloSaga()
+        watchLogin(),
+        watchSignUp()
     ])
 }

@@ -14,7 +14,7 @@ const Home = () => {
     useEffect(() => {
         //dispatch(loginAction)
         //dispatch(logoutAction)
-        dispatch({ type: 'HELLO_SAGA' })
+        //dispatch({ type: 'HELLO_SAGA' })
     }, [])
 
     return (

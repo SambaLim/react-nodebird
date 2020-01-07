@@ -3079,26 +3079,18 @@ function* login() {
   }
 }
 
+function* watchSignUp() {}
+
 function* watchLogin() {
-  yield Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_0__["takeLatest"])(_reducers_user__WEBPACK_IMPORTED_MODULE_1__["LOG_IN"], login);
-}
-
-function* helloSaga() {
-  console.log('before saga');
-  /* 반복하고 싶다면
-  while(true) {
-      yield take(HELLO_SAGA)
-      console.log('hello saga')
-  }
-  */
-
-  yield Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_0__["take"])(HELLO_SAGA); // HELLO_SAGA를 기다림
-
-  console.log('hello saga');
+  yield Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_0__["take"])(_reducers_user__WEBPACK_IMPORTED_MODULE_1__["LOG_IN"]);
+  yield delay(2000);
+  yield Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_0__["put"])({
+    type: _reducers_user__WEBPACK_IMPORTED_MODULE_1__["LOG_IN_SUCCESS"]
+  });
 }
 
 function* userSaga() {
-  yield Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_0__["all"])([Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_0__["fork"])(watchLogin), helloSaga()]);
+  yield Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_0__["all"])([watchLogin(), watchSignUp()]);
 }
 
 /***/ }),
