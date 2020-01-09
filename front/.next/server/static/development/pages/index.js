@@ -499,9 +499,12 @@ const Home = () => {
   const {
     mainPosts
   } = Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["useSelector"])(state => state.post);
-  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {//dispatch(loginAction)
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
+    //dispatch(loginAction)
     //dispatch(logoutAction)
-    //dispatch({ type: 'HELLO_SAGA' })
+    dispatch({
+      type: 'HELLO_SAGA'
+    });
   }, []);
   return __jsx("div", {
     __source: {
