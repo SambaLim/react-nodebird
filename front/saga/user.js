@@ -21,7 +21,7 @@ function* login() {
 }
 
 function* watchLogin() {
-    yield takeLatest(LOG_IN, login)
+    yield takeLatest(LOG_IN_REQUEST, login)
 }
 
 function* hello() {
