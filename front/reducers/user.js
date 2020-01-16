@@ -35,12 +35,10 @@ export const logoutAction = {
     type: LOG_OUT_REQUEST
 }
 
-export const signUpAction = (data) => {
-    return {
-        type: SIGN_UP_REQUEST,
-        data: data,
-    }
-}
+export const signUp = data => ({
+    type: SIGN_UP_REQUEST,
+    data: data,
+})
 
 export default (state = initialState, action) => {
     switch(action.type) {

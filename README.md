@@ -178,3 +178,13 @@ function* generator() {
 const gen = generator()
 gen.next()
 ```
+
+# eslint-config-airbnb
+
+```
+npm i -D eslint-config-airbnb
+// 장애인을 위한 웹 접근성
+npm i -D eslint-plugin-jsx-a11y
+// 바벨 최신문법
+npm i -D babel-eslint
+```
