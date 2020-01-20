@@ -2887,8 +2887,23 @@ const initialState = {
 };
 const ADD_POST = 'ADD_POST';
 const ADD_DUMMY = 'ADD_DUMMY';
-const addPost = {
-  type: ADD_POST
+const dummyPost = {
+  id: 2,
+  User: {
+    id: 1,
+    nickname: '삼바림'
+  },
+  content: '나는 더미입니다.',
+  Comments: []
+};
+const dummyComment = {
+  id: 1,
+  User: {
+    id: 1,
+    nickname: '제로초'
+  },
+  createdAt: new Date(),
+  content: '더미 댓글입니다.'
 };
 const LOAD_MAIN_POSTS_REQUEST = 'LOAD_MAIN_POSTS_REQUEST';
 const LOAD_MAIN_POSTS_SUCCESS = 'LOAD_MAIN_POSTS_SUCCESS';
@@ -2927,15 +2942,61 @@ const REMOVE_POST_FAILURE = 'REMOVE_POST_FAILURE';
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
-    case ADD_POST:
-      {
-        return _objectSpread({}, state);
-      }
-
-    case ADD_DUMMY:
+    case ADD_POST_REQUEST:
       {
         return _objectSpread({}, state, {
-          mainPosts: [action.data, ...state.mainPosts]
+          isAddingPost: true,
+          addPostErrorReason: '',
+          postAdded: false
+        });
+      }
+
+    case ADD_POST_SUCCESS:
+      {
+        return _objectSpread({}, state, {
+          isAddingPost: false,
+          mainPosts: [dummyPost, ...state.mainPosts]
+        });
+      }
+
+    case ADD_POST_FAILURE:
+      {
+        return _objectSpread({}, state, {
+          isAddingPost: false,
+          addPostErrorReason: action.error
+        });
+      }
+
+    case ADD_COMMENT_REQUEST:
+      {
+        return _objectSpread({}, state, {
+          isAddingComment: true,
+          addCommentErrorReason: '',
+          commentAdded: false
+        });
+      }
+
+    case ADD_COMMENT_SUCCESS:
+      {
+        const postIndex = state.mainPosts.findIndex(v => v.id === action.data.postId);
+        const post = state.mainPosts[postIndex];
+        const Comments = [...post.Comments, dummyComment];
+        const mainPosts = [...state.mainPosts];
+        mainPosts[postIndex] = _objectSpread({}, post, {
+          Comments
+        });
+        return _objectSpread({}, state, {
+          isAddingComment: false,
+          mainPosts,
+          commentAdded: true
+        });
+      }
+
+    case ADD_COMMENT_FAILURE:
+      {
+        return _objectSpread({}, state, {
+          isAddingComment: false,
+          addCommentErrorReason: action.error
         });
       }
 
