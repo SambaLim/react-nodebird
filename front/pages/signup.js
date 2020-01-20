@@ -42,11 +42,6 @@ const Signup = () => {
         if(!term) {
             return setTermError(true)
         }
-        dispatch(signUp({
-            id,
-            password,
-            nick,
-        }))
     }, [password, passwordCheck, term])
     const onChangePasswordCheck = useCallback((e) => {
         setPasswordError(e.target.value !== password)

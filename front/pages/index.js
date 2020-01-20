@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from 'react-redux'
 import PostForm from '../components/PostForm'
 import PostCard from '../components/PostCard'
 import NicknameEditForm from '../components/NicknameEditForm'
-import { loginAction, logoutAction } from '../reducers/user'
 
 const Home = () => {
 
@@ -12,9 +11,6 @@ const Home = () => {
     const { mainPosts } = useSelector(state => state.post)
 
     useEffect(() => {
-        //dispatch(loginAction)
-        //dispatch(logoutAction)
-        dispatch({ type: 'HELLO_SAGA' })
     }, [])
 
     return (
