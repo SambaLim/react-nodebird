@@ -33,12 +33,10 @@ const configureStore = (initialState, options) => {
     const sagaMiddleware = createSagaMiddleware()
     const middlewares = [sagaMiddleware]
     const enhancer = process.env.NODE_ENV === 'production'
-    ? compose(
-        applyMiddleware(...middlewares), )
-    : compose(
+        ? compose(applyMiddleware(...middlewares))
+        : compose(
         applyMiddleware(...middlewares),
-            !options.isServer && window.__REDUX_DEVTOOLS_EXTENSION__ !== 'undefined' ?
-            window.__REDUX_DEVTOOLS_EXTENSION__() : (f) => f
+        !options.isServer && typeof window.__REDUX_DEVTOOLS_EXTENSION__ !== 'undefined' ? window.__REDUX_DEVTOOLS_EXTENSION__() : f => f,
         )
     const store = createStore(reducer, initialState, enhancer)
     sagaMiddleware.run(rootSaga)

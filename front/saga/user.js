@@ -12,7 +12,8 @@ function signUpAPI() {
 
 function* login() {
     try {
-        yield call(loginAPI)
+        yield delay(2000)
+        //yield call(loginAPI)
         yield put({ // dispatch와 같은역할
             type: LOG_IN_SUCCESS
         })
@@ -25,7 +26,8 @@ function* login() {
 
 function* signUp() {
     try {
-        yield call(signUpAPI)
+        yield delay(2000)
+        //yield call(signUpAPI)
         yield put({
             type: SIGN_UP_SUCCESS,
         })

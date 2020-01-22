@@ -6,12 +6,8 @@ import NicknameEditForm from '../components/NicknameEditForm'
 
 const Home = () => {
 
-    const dispatch = useDispatch()
     const { user, isLoggedIn } = useSelector(state => state.user)
     const { mainPosts } = useSelector(state => state.post)
-
-    useEffect(() => {
-    }, [])
 
     return (
         <div>

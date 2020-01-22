@@ -393,7 +393,6 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 const Home = () => {
-  const dispatch = Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["useDispatch"])();
   const {
     user,
     isLoggedIn
@@ -401,35 +400,34 @@ const Home = () => {
   const {
     mainPosts
   } = Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["useSelector"])(state => state.post);
-  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {}, []);
   return __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 17
+      lineNumber: 13
     },
     __self: undefined
   }, user ? __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 18
+      lineNumber: 14
     },
     __self: undefined
   }, "\uB85C\uADF8\uC778 \uD588\uC2B5\uB2C8\uB2E4: ", user.nickname) : __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 18
+      lineNumber: 14
     },
     __self: undefined
   }, "\uB85C\uADF8\uC544\uC6C3 \uD588\uC2B5\uB2C8\uB2E4."), __jsx(_components_NicknameEditForm__WEBPACK_IMPORTED_MODULE_4__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 19
+      lineNumber: 15
     },
     __self: undefined
   }), isLoggedIn && __jsx(_components_PostForm__WEBPACK_IMPORTED_MODULE_2__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 20
+      lineNumber: 16
     },
     __self: undefined
   }), mainPosts.map(c => {
@@ -438,7 +436,7 @@ const Home = () => {
       post: c,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 23
+        lineNumber: 19
       },
       __self: undefined
     });
