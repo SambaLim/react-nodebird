@@ -1,4 +1,4 @@
-import { all, fork, takeLatest, takeEvery, call, put, take } from 'redux-saga/effects'
+import { all, fork, takeLatest, takeEvery, call, put, take, delay } from 'redux-saga/effects'
 import { LOG_IN_REQUEST, LOG_IN_SUCCESS, LOG_IN_FAILURE, SIGN_UP_REQUEST, SIGN_UP_SUCCESS, SIGN_UP_FAILURE } from '../reducers/user'
 import axios from 'axios'
 
@@ -18,6 +18,7 @@ function* login() {
             type: LOG_IN_SUCCESS
         })
     } catch(e) {
+        console.error(e)
         yield put({
             type: LOG_IN_FAILURE
         })
