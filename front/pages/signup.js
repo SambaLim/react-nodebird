@@ -42,7 +42,7 @@ const Signup = () => {
             alert('로그인 하였으니, 메인페이지로 이동합니다.')
             Router.push('/')
         }
-    })
+    }, [me && me.id])
 
     const onSubmit = useCallback((e) => {
         e.preventDefault()
@@ -52,11 +52,22 @@ const Signup = () => {
         if(!term) {
             return setTermError(true)
         }
+
+        return dispatch({
+            type: SIGN_UP_REQUEST,
+            data: {
+                id,
+                password,
+                nick,
+            }
+        })
     }, [password, passwordCheck, term])
+
     const onChangePasswordCheck = useCallback((e) => {
         setPasswordError(e.target.value !== password)
         setPasswordCheck(e.target.value)
     }, [password])
+
     const onChangeTerm = useCallback((e) => {
         setTermError(false)
         setTerm(e.target.checked)
