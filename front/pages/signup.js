@@ -1,6 +1,6 @@
 import React, { useState, useCallback, useEffect } from 'react'
 import PropTypes from 'prop-types'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { Form, Input, Checkbox, Button } from 'antd'
 import Router from 'next/router'
 import { SIGN_UP_REQUEST } from '../reducers/user'
