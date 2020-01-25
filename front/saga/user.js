@@ -15,12 +15,12 @@ function* login() {
         yield delay(2000)
         //yield call(loginAPI)
         yield put({ // dispatch와 같은역할
-            type: LOG_IN_SUCCESS
+            type: LOG_IN_SUCCESS,
         })
     } catch(e) {
         console.error(e)
         yield put({
-            type: LOG_IN_FAILURE
+            type: LOG_IN_FAILURE,
         })
     }
 }
