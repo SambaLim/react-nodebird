@@ -40,7 +40,7 @@ const Signup = () => {
     useEffect(() => {
         if(me) {
             alert('로그인 하였으니, 메인페이지로 이동합니다.')
-            Router.push('/')
+            //Router.push('/')
         }
     }, [me && me.id])
 

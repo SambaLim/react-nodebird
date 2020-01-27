@@ -2584,8 +2584,7 @@ const Signup = () => {
   } = Object(react_redux__WEBPACK_IMPORTED_MODULE_2__["useSelector"])(state => state.user);
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
     if (me) {
-      alert('로그인 하였으니, 메인페이지로 이동합니다.');
-      next_router__WEBPACK_IMPORTED_MODULE_4___default.a.push('/');
+      alert('로그인 하였으니, 메인페이지로 이동합니다.'); //Router.push('/')
     }
   }, [me && me.id]);
   const onSubmit = Object(react__WEBPACK_IMPORTED_MODULE_0__["useCallback"])(e => {

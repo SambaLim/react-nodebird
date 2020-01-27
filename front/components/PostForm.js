@@ -7,7 +7,7 @@ const PostForm = () => {
 
     const dispatch = useDispatch()
     const [text, setText] = useState('')
-    const { imagePaths, isAddingPost, postAdded } = useSelector(state => state.user)
+    const { imagePaths, isAddingPost, postAdded } = useSelector(state => state.post)
 
     useEffect(() => {
         if(postAdded) {

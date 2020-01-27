@@ -1,9 +1,11 @@
 import React from 'react'
 import { Form, Input, Card, List, Button, Icon }from 'antd'
+import NicknameEditForm from '../components/NicknameEditForm'
 
 const Profile = () => {
     return (
         <div>
+            <NicknameEditForm />
             <List
                 style={{ marginBottom: '20px' }}
                 grid={{ gutter: 4, xs: 2, md: 3 }}
