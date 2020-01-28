@@ -1,11 +1,13 @@
 export const initialState = {
-    mainPosts: [
-        { User: {
+    mainPosts: [{ 
+        id: 1,
+        User: {
             id: 1,
             nickname: '삼바림'
         },
         content: '첫 번째 게시물',
-        img: 'https://i.imgur.com/DxH71p6.png'
+        img: 'https://i.imgur.com/DxH71p6.png',
+        Comments: [],
     }], // 화면에 보일 포스트들
     imagePaths: [], // 미리보기 이미지 경로
     addPostErrorReason: '', // 포스트 업로드 실패 사유
@@ -27,17 +29,17 @@ const dummyPost = {
     },
     content: '나는 더미입니다.',
     Comments: [],
-};
+}
 
 const dummyComment = {
     id: 1,
     User: {
         id: 1,
-        nickname: '제로초',
+        nickname: '삼바림',
     },
     createdAt: new Date(),
     content: '더미 댓글입니다.',
-};
+}
 
 export const LOAD_MAIN_POSTS_REQUEST = 'LOAD_MAIN_POSTS_REQUEST'
 export const LOAD_MAIN_POSTS_SUCCESS = 'LOAD_MAIN_POSTS_SUCCESS'
@@ -117,7 +119,7 @@ const reducer = (state = initialState, action) => {
               commentAdded: false,
             };
           }
-          case ADD_COMMENT_SUCCESS: {
+        case ADD_COMMENT_SUCCESS: {
             const postIndex = state.mainPosts.findIndex(v => v.id === action.data.postId)
             const post = state.mainPosts[postIndex]
             const Comments = [...post.Comments, dummyComment]
