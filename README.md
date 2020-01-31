@@ -188,3 +188,18 @@ npm i -D eslint-plugin-jsx-a11y
 // 바벨 최신문법
 npm i -D babel-eslint
 ```
+
+# 백엔드 서버 구동에 필요한 모듈들
+
+```
+npm i express
+npm i axios
+/* 비밀번호 암호화 */
+npm i bcrypt
+```
+
+에러나는 경우
+```
+/* 관리자모드에서 실행 (1시간 소요) */
+npm install --global --production windows-build-tools
+```
