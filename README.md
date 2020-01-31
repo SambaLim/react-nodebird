@@ -196,10 +196,34 @@ npm i express
 npm i axios
 /* 비밀번호 암호화 */
 npm i bcrypt
+npm i cookie-parser
+npm i express-session
+/* 로그인정보 저장 */
+npm i dotenv
+npm i cors
+/* express 보안 */
+npm i helmet hpp
+/* 서버로그 */
+npm i morgan
+/* 이미지 업로드 */
+npm i multer
+/* 로그인 관리 (회원가입 포함) */
+npm i passport passport-local
+/* mysql (ORM) */
+npm i sequelize sequelize-cli
 ```
 
-에러나는 경우
 ```
-/* 관리자모드에서 실행 (1시간 소요) */
+npm i -D eslint eslint-config-airbnb
+npm i -D eslint-plugin-jsx-a11y
+/* 핫리로드를 위해(알아서 서버를 껐다켰다해줌) */
+npm i -D nodemon
+```
+
+
+`bcrypt` 에러나는 경우
+
+```
+/* 관리자모드에서 실행 (10분 소요) */
 npm install --global --production windows-build-tools
 ```
