@@ -227,3 +227,8 @@ npm i -D nodemon
 /* 관리자모드에서 실행 (10분 소요) */
 npm install --global --production windows-build-tools
 ```
+
+# HTTP 요청 주소 체계 이해하기
+
+- REST API
+- GraphQL
