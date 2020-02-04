@@ -232,3 +232,16 @@ npm install --global --production windows-build-tools
 
 - REST API
 - GraphQL
+
+# Sequelize와 ERD
+
+```
+npm i -g sequelize-cli
+sequelize init
+```
+
+npm 환경변수 등록
+
+```
+C:\Users\{사용자이름}\AppData\Roaming\npm
+```
