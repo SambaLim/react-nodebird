@@ -245,3 +245,11 @@ npm 환경변수 등록
 ```
 C:\Users\{사용자이름}\AppData\Roaming\npm
 ```
+
+```
+npm i mysql2
+```
+
+- MySQL 설치부분
+
+![](https://i.imgur.com/Htj8NXL.png)

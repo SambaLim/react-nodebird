@@ -1,4 +1,8 @@
 const express = require('express');
+
+const db = require('./models');
+db.sequelize.sync();
+
 const app = express();
 
 app.get('/', (req, res) => {
